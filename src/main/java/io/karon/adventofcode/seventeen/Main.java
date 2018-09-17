@@ -2,7 +2,7 @@ package io.karon.adventofcode.seventeen;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 //		System.out.println("Day 1 : ");
 //		System.out.println("    Star 1 (expected: 1341) : " + Day1.Star1.getResult());
 //		System.out.println("    Star 2 (expected: 1348) : " + Day1.Star2.getResult());
@@ -71,29 +71,29 @@ public class Main {
 //		System.out.println("    Star 1 (expected: 772) : " + Day17.Star1.getResult());
 //		System.out.println("    Star 2 (expected: 42729050) : " + Day17.Star2.getResult());
 //
-		System.out.println("Day 18 : ");
-		System.out.println("    Star 1 (expected: ) : " + Day18.Star1.getResult());
-		System.out.println("    Star 2 (expected: ) : " + Day18.Star2.getResult());
+//		System.out.println("Day 18 : ");
+//		System.out.println("    Star 1 (expected: 9423) : " + Day18.Star1.getResult());
+//		System.out.println("    Star 2 (expected: 7620) : " + Day18.Star2.getResult());
 //
 //		System.out.println("Day 19 : ");
-//		System.out.println("    Star 1 (expected: ) : " + Day19.Star1.getResult());
-//		System.out.println("    Star 2 (expected: ) : " + Day19.Star2.getResult());
+//		System.out.println("    Star 1 (expected: XYFDJNRCQA) : " + Day19.Star1.getResult());
+//		System.out.println("    Star 2 (expected: 17450) : " + Day19.Star2.getResult());
 //
 //		System.out.println("Day 20 : ");
-//		System.out.println("    Star 1 (expected: ) : " + Day20.Star1.getResult());
-//		System.out.println("    Star 2 (expected: ) : " + Day20.Star2.getResult());
+//		System.out.println("    Star 1 (expected: 376) : " + Day20.Star1.getResult());
+//		System.out.println("    Star 2 (expected: 574) : " + Day20.Star2.getResult());
 //
 //		System.out.println("Day 21 : ");
-//		System.out.println("    Star 1 (expected: ) : " + Day21.Star1.getResult());
-//		System.out.println("    Star 2 (expected: ) : " + Day21.Star2.getResult());
+//		System.out.println("    Star 1 (expected: 144) : " + Day21.Star1.getResult());
+//		System.out.println("    Star 2 (expected: 2169301) : " + Day21.Star2.getResult());
 //
 //		System.out.println("Day 22 : ");
-//		System.out.println("    Star 1 (expected: ) : " + Day22.Star1.getResult());
-//		System.out.println("    Star 2 (expected: ) : " + Day22.Star2.getResult());
+//		System.out.println("    Star 1 (expected: 5246) : " + Day22.Star1.getResult());
+//		System.out.println("    Star 2 (expected: 2512059) : " + Day22.Star2.getResult());
 //
-//		System.out.println("Day 23 : ");
-//		System.out.println("    Star 1 (expected: ) : " + Day23.Star1.getResult());
-//		System.out.println("    Star 2 (expected: ) : " + Day23.Star2.getResult());
+		System.out.println("Day 23 : ");
+//		System.out.println("    Star 1 (expected: 9409) : " + Day23.Star1.getResult());
+		System.out.println("    Star 2 (expected: ) : " + Day23.Star2.getResult());
 //
 //		System.out.println("Day 24 : ");
 //		System.out.println("    Star 1 (expected: ) : " + Day24.Star1.getResult());

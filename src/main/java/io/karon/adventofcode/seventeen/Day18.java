@@ -2,34 +2,19 @@ package io.karon.adventofcode.seventeen;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.LinkedBlockingQueue;
 
 
 class Day18 {
 
 	static class Star1 {
 
-		static int getResult() {
+		static long getResult() {
 			Operation[] operations = getFormattedInput();
-			Map<String, Integer> registers = new HashMap<>();
-			int frequencyLastSoundPlayed = 0;
-			int rcvValue;
+			Map<String, Long> registers = new HashMap<>();
+			long frequencyLastSoundPlayed = 0;
+			long rcvValue;
 
-			/*
-
-    snd X plays a sound with a frequency equal to the value of X.
-    set X Y sets register X to the value of Y.
-    add X Y increases register X by the value of Y.
-    mul X Y sets register X to the result of multiplying the value contained in register X by the value of Y.
-    mod X Y sets register X to the remainder of dividing the value contained in register X by the value of Y (that is, it sets X to the result of X modulo Y).
-    rcv X recovers the frequency of the last sound played, but only when the value of X is not zero. (If it is zero, the command does nothing.)
-    jgz X Y jumps with an offset of the value of Y, but only if the value of X is greater than zero. (An offset of 2 skips the next instruction,
-    	an offset of -1 jumps to the previous instruction, and so on.)
-
-Many of the instructions can take either a register (a single letter) or a number. The value of a register is the integer it contains; the value of a number is that number.
-
-After each jump instruction, the program continues with the instruction to which the jump jumped.
-	After any other instruction, the program continues with the next instruction. Continuing (or jumping) off either end of the program terminates it.
-			 */
 			int i = 0;
 			while (i >= 0 && i < operations.length) {
 				switch (operations[i].operationType) {
@@ -88,8 +73,92 @@ After each jump instruction, the program continues with the instruction to which
 
 	static class Star2 {
 
-		static int getResult() {
-			return 0;
+		static int getResult() throws InterruptedException {
+			Program program0 = new Program("p", 0L);
+			Program program1 = new Program("p", 1L);
+
+			LinkedBlockingQueue<Long> queue0;
+			LinkedBlockingQueue<Long> queue1 = new LinkedBlockingQueue<>();
+			int count = 0;
+
+			do {
+				queue0 = program0.continueProcess(queue1);
+				queue1 = program1.continueProcess(queue0);
+				count += queue1.size();
+			} while (!queue0.isEmpty() || !queue1.isEmpty());
+
+			return count;
+		}
+
+		private static class Program {
+
+			int i = 0;
+			Operation[] operations = getFormattedInput();
+			Map<String, Long> registers = new HashMap<>();
+
+			Program(String register, long value) {
+				registers.put(register, value);
+			}
+
+			LinkedBlockingQueue<Long> continueProcess(LinkedBlockingQueue<Long> inputQueue) throws InterruptedException {
+				LinkedBlockingQueue<Long> outputQueue = new LinkedBlockingQueue<>();
+
+				while (i >= 0 && i < operations.length) {
+					switch (operations[i].operationType) {
+						case SND: {
+							outputQueue.put(operations[i].getValue(0, registers));
+							i++;
+							break;
+						}
+						case SET: {
+							String register = operations[i].getKey(0, registers);
+							registers.put(register, operations[i].getValue(1, registers));
+							i++;
+							break;
+						}
+						case ADD: {
+							String register = operations[i].getKey(0, registers);
+							registers.put(register, registers.get(register) + operations[i].getValue(1, registers));
+							i++;
+							break;
+						}
+						case MUL: {
+							String register = operations[i].getKey(0, registers);
+							registers.put(register, registers.get(register) * operations[i].getValue(1, registers));
+							i++;
+							break;
+						}
+						case MOD: {
+							String register = operations[i].getKey(0, registers);
+							registers.put(register, registers.get(register) % operations[i].getValue(1, registers));
+							i++;
+							break;
+						}
+						case RCV: {
+							if (inputQueue.isEmpty()) {
+								return outputQueue;
+							} else {
+								String register = operations[i].getKey(0, registers);
+								registers.put(register, inputQueue.poll());
+							}
+							i++;
+							break;
+						}
+						case JGZ: {
+							if (operations[i].getValue(0, registers) > 0) {
+								i += operations[i].getValue(1, registers);
+							} else {
+								i++;
+							}
+							break;
+						}
+					}
+				}
+
+				return outputQueue;
+			}
+
+
 		}
 
 	}
@@ -131,16 +200,16 @@ After each jump instruction, the program continues with the instruction to which
 			System.arraycopy(inputs, 1, values, 0, inputs.length - 1);
 		}
 
-		Integer getValue(int index, Map<String, Integer> registers) {
+		Long getValue(int index, Map<String, Long> registers) {
 			try {
-				return Integer.parseInt(values[index]);
+				return Long.parseLong(values[index]);
 			} catch (NumberFormatException e) {
-				return registers.computeIfAbsent(values[index], key -> 0);
+				return registers.computeIfAbsent(values[index], key -> 0L);
 			}
 		}
 
-		String getKey(int index, Map<String, Integer> registers) {
-			registers.putIfAbsent(values[index], 0);
+		String getKey(int index, Map<String, Long> registers) {
+			registers.putIfAbsent(values[index], 0L);
 			return values[index];
 		}
 
@@ -156,19 +225,6 @@ After each jump instruction, the program continues with the instruction to which
 		}
 
 		return operations;
-	}
-
-	private static String getTestInput() {
-		return "set a 1\n"
-				+ "add a 2\n"
-				+ "mul a a\n"
-				+ "mod a 5\n"
-				+ "snd a\n"
-				+ "set a 0\n"
-				+ "rcv a\n"
-				+ "jgz a -1\n"
-				+ "set a 1\n"
-				+ "jgz a -2";
 	}
 
 	private static String getInput() {
