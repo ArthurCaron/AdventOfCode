@@ -68,7 +68,7 @@ class Day7 {
 			this.weightOfChildren = 0;
 			this.children = new HashMap<>();
 
-			for (int i = 2; i < splittedLine.length; i++) {
+			for (int i = 2; i < splittedLine.length; ++i) {
 				this.children.put(splittedLine[i], null);
 			}
 		}

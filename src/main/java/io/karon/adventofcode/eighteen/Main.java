@@ -2,23 +2,23 @@ package io.karon.adventofcode.eighteen;
 
 public class Main {
 
-	public static void main(String[] args) throws InterruptedException {
-		//		System.out.println("Day 1 : ");
-		//		System.out.println("    Star 1 (expected: ) : " + Day1.Star1.getResult());
-		//		System.out.println("    Star 2 (expected: ) : " + Day1.Star2.getResult());
-		//
-		//		System.out.println("Day 2 : ");
-		//		System.out.println("    Star 1 (expected: ) : " + Day2.Star1.getResult());
-		//		System.out.println("    Star 2 (expected: ) : " + Day2.Star2.getResult());
-		//
-		//		System.out.println("Day 3 : ");
-		//		System.out.println("    Star 1 (expected: ) : " + Day3.Star1.getResult());
-		//		System.out.println("    Star 2 (expected: ) : " + Day3.Star2.getResult());
-		//
-		//		System.out.println("Day 4 : ");
-		//		System.out.println("    Star 1 (expected: ) : " + Day4.Star1.getResult());
+	public static void main(String[] args) {
+//				System.out.println("Day 1 : ");
+//				System.out.println("    Star 1 (expected: 538) : " + Day1.Star1.getResult());
+//				System.out.println("    Star 2 (expected: 77271) : " + Day1.Star2.getResult());
+//
+//				System.out.println("Day 2 : ");
+//				System.out.println("    Star 1 (expected: 3952) : " + Day2.Star1.getResult());
+//				System.out.println("    Star 2 (expected: vtnikorkulbfejvyznqgdxpaw) : " + Day2.Star2.getResult());
+//
+//				System.out.println("Day 3 : ");
+//				System.out.println("    Star 1 (expected: 101469) : " + Day3.Star1.getResult());
+//				System.out.println("    Star 2 (expected: 1067) : " + Day3.Star2.getResult());
+//
+				System.out.println("Day 4 : ");
+				System.out.println("    Star 1 (expected: ) : " + Day4.Star1.getResult());
 		//		System.out.println("    Star 2 (expected: ) : " + Day4.Star2.getResult());
-		//
+//
 		//		System.out.println("Day 5 : ");
 		//		System.out.println("    Star 1 (expected: ) : " + Day5.Star1.getResult());
 		//		System.out.println("    Star 2 (expected: ) : " + Day5.Star2.getResult());

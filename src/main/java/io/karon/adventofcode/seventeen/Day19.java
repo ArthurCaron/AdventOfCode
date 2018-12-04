@@ -166,7 +166,7 @@ class Day19 {
 	}
 
 	private static int findYStartingPoint(char[][] grid) {
-		for (int i = 0; i < grid[0].length; i++) {
+		for (int i = 0; i < grid[0].length; ++i) {
 			if (grid[0][i] == VERTICAL_LINE) {
 				return i;
 			}
@@ -178,7 +178,7 @@ class Day19 {
 		String[] formattedInput = getInput().split("\\n");
 		char[][] grid = new char[formattedInput.length][formattedInput[0].length()];
 
-		for (int i = 0; i < formattedInput.length; i++) {
+		for (int i = 0; i < formattedInput.length; ++i) {
 			grid[i] = formattedInput[i].toCharArray();
 		}
 

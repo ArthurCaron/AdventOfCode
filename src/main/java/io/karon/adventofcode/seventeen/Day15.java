@@ -14,7 +14,7 @@ class Day15 {
 			long a = getInputGeneratorA();
 			long b = getInputGeneratorB();
 
-			for (int i = 0; i < FORTY_MILLIONS; i++) {
+			for (int i = 0; i < FORTY_MILLIONS; ++i) {
 				a = operate(a, FACTOR_A);
 				b = operate(b, FACTOR_B);
 
@@ -42,7 +42,7 @@ class Day15 {
 			long a = getInputGeneratorA();
 			long b = getInputGeneratorB();
 
-			for (int i = 0; i < FIVE_MILLIONS; i++) {
+			for (int i = 0; i < FIVE_MILLIONS; ++i) {
 				a = operateUntilMultipleFound(a, FACTOR_A, MULTIPLE_FOR_A);
 				b = operateUntilMultipleFound(b, FACTOR_B, MULTIPLE_FOR_B);
 

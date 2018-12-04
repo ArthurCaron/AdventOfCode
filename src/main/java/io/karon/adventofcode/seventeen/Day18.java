@@ -20,31 +20,31 @@ class Day18 {
 				switch (operations[i].operationType) {
 					case SND: {
 						frequencyLastSoundPlayed = operations[i].getValue(0, registers);
-						i++;
+						++i;
 						break;
 					}
 					case SET: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case ADD: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) + operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case MUL: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) * operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case MOD: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) % operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case RCV: {
@@ -52,14 +52,14 @@ class Day18 {
 							rcvValue = frequencyLastSoundPlayed;
 							return rcvValue;
 						}
-						i++;
+						++i;
 						break;
 					}
 					case JGZ: {
 						if (operations[i].getValue(0, registers) > 0) {
 							i += operations[i].getValue(1, registers);
 						} else {
-							i++;
+							++i;
 						}
 						break;
 					}
@@ -107,31 +107,31 @@ class Day18 {
 					switch (operations[i].operationType) {
 						case SND: {
 							outputQueue.put(operations[i].getValue(0, registers));
-							i++;
+							++i;
 							break;
 						}
 						case SET: {
 							String register = operations[i].getKey(0, registers);
 							registers.put(register, operations[i].getValue(1, registers));
-							i++;
+							++i;
 							break;
 						}
 						case ADD: {
 							String register = operations[i].getKey(0, registers);
 							registers.put(register, registers.get(register) + operations[i].getValue(1, registers));
-							i++;
+							++i;
 							break;
 						}
 						case MUL: {
 							String register = operations[i].getKey(0, registers);
 							registers.put(register, registers.get(register) * operations[i].getValue(1, registers));
-							i++;
+							++i;
 							break;
 						}
 						case MOD: {
 							String register = operations[i].getKey(0, registers);
 							registers.put(register, registers.get(register) % operations[i].getValue(1, registers));
-							i++;
+							++i;
 							break;
 						}
 						case RCV: {
@@ -141,14 +141,14 @@ class Day18 {
 								String register = operations[i].getKey(0, registers);
 								registers.put(register, inputQueue.poll());
 							}
-							i++;
+							++i;
 							break;
 						}
 						case JGZ: {
 							if (operations[i].getValue(0, registers) > 0) {
 								i += operations[i].getValue(1, registers);
 							} else {
-								i++;
+								++i;
 							}
 							break;
 						}
@@ -219,7 +219,7 @@ class Day18 {
 		String[] inputs = getInput().split("\\n");
 		Operation[] operations = new Operation[inputs.length];
 
-		for (int i = 0; i < inputs.length; i++) {
+		for (int i = 0; i < inputs.length; ++i) {
 			String[] operationData = inputs[i].split(" ");
 			operations[i] = new Operation(operationData);
 		}

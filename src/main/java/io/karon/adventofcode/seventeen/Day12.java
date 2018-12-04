@@ -24,7 +24,7 @@ class Day12 {
 				nodes.put(lineNodes[0], new Node(lineNodes[0]));
 
 				List<String> nodeLinks = new ArrayList<>();
-				for (int i = 1; i < lineNodes.length; i++) {
+				for (int i = 1; i < lineNodes.length; ++i) {
 					nodeLinks.add(lineNodes[i]);
 				}
 				links.put(lineNodes[0], nodeLinks);
@@ -54,14 +54,14 @@ class Day12 {
 				nodes.put(lineNodes[0], new Node(lineNodes[0]));
 
 				List<String> nodeLinks = new ArrayList<>();
-				for (int i = 1; i < lineNodes.length; i++) {
+				for (int i = 1; i < lineNodes.length; ++i) {
 					nodeLinks.add(lineNodes[i]);
 				}
 				links.put(lineNodes[0], nodeLinks);
 			}
 
 			int groupCounter = 0;
-			for (int i = 0; i < nodes.size(); i++) {
+			for (int i = 0; i < nodes.size(); ++i) {
 				if (!nodes.get(String.valueOf(i)).visited) {
 					groupCounter++;
 					exploreLinks(nodes.get(String.valueOf(i)), links, nodes);

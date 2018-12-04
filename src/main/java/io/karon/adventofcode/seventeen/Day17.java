@@ -12,7 +12,7 @@ class Day17 {
 			circularBuffer[0] = 0;
 
 			int currentPosition = 0;
-			for (int i = 1; i < MAX_VALUES; i++) {
+			for (int i = 1; i < MAX_VALUES; ++i) {
 				int index = currentPosition + forwardSteps;
 				while (index >= i) {
 					index -= i;
@@ -44,7 +44,7 @@ class Day17 {
 			int indexOfZero = 0;
 			int valueAfterZero = 0;
 			int currentPosition = 0;
-			for (int i = 1; i < MAX_VALUES; i++) {
+			for (int i = 1; i < MAX_VALUES; ++i) {
 				currentPosition += forwardSteps;
 				while (currentPosition >= i) {
 					currentPosition -= i;

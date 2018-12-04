@@ -17,7 +17,7 @@ class Day3 {
 
 			grid[center.x][center.y] = center.value;
 
-			for (int i = 1; i <= center.x; i++) {
+			for (int i = 1; i <= center.x; ++i) {
 				fillGridSpiral(grid, i);
 			}
 
@@ -130,7 +130,7 @@ class Day3 {
 			grid[center.x][center.y] = center.value;
 
 			State inputDataLocation = null;
-			for (int i = 1; i <= center.x; i++) {
+			for (int i = 1; i <= center.x; ++i) {
 				inputDataLocation = fillGridSpiral(grid, i, input);
 				if (inputDataLocation != null) {
 					break;

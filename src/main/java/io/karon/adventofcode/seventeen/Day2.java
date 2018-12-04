@@ -32,7 +32,7 @@ class Day2 {
 		}
 
 		private static int rowDiff(int[] row) {
-			for (int i = 0; i < row.length; i++) {
+			for (int i = 0; i < row.length; ++i) {
 				for (int j = 0; j < row.length; j++) {
 					if (j == i) {
 						continue;
@@ -65,7 +65,7 @@ class Day2 {
 		String[] lines = getInput().split("\\n");
 		int[][] formattedInput = new int[lines.length][];
 
-		for (int i = 0; i < lines.length; i++) {
+		for (int i = 0; i < lines.length; ++i) {
 			String[] values = lines[i].split("\\t");
 			formattedInput[i] = new int[values.length];
 

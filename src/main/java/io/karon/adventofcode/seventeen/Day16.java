@@ -38,7 +38,7 @@ class Day16 {
 			List<Operation> operations = getOperations(getFormattedInput());
 			Tree tree = new Tree();
 
-			for (int i = 0; i < ONE_BILLION; i++) {
+			for (int i = 0; i < ONE_BILLION; ++i) {
 				for (Operation operation : operations) {
 					if (operation.isSpin()) {
 						programs = spin(programs, (Spin) operation);
@@ -122,7 +122,7 @@ class Day16 {
 	private static String[] spin(String[] programs, Spin operation) {
 		String[] programsNewOrder = new String[programs.length];
 
-		for (int i = 0; i < programs.length; i++) {
+		for (int i = 0; i < programs.length; ++i) {
 			int spinnedIndex = (i + operation.spinValue) % programs.length;
 			programsNewOrder[spinnedIndex] = programs[i];
 		}
@@ -145,7 +145,7 @@ class Day16 {
 	}
 
 	private static int findIndex(String[] programs, String name) {
-		for (int i = 0; i < programs.length; i++) {
+		for (int i = 0; i < programs.length; ++i) {
 			if (programs[i].equals(name)) {
 				return i;
 			}

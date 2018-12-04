@@ -14,7 +14,7 @@ class Day20 {
 			int slowestParticleIndex = 0;
 			long accelerationManhattanOfSlowest = particles.get(0).accelerationManhattan();
 
-			for (int i = 1; i < particles.size(); i++) {
+			for (int i = 1; i < particles.size(); ++i) {
 				long accelerationManhattan = particles.get(i).accelerationManhattan();
 				if (accelerationManhattanOfSlowest > accelerationManhattan) {
 					slowestParticleIndex = i;
@@ -55,7 +55,7 @@ class Day20 {
 		private static List<Particle> getNonCollidingParticles(List<Particle> particles) {
 			List<Particle> outputParticles = new ArrayList<>();
 
-			for (int i = 0; i < particles.size(); i++) {
+			for (int i = 0; i < particles.size(); ++i) {
 				boolean collides = false;
 				for (int j = 0; j < particles.size(); j++) {
 					if (j != i && particles.get(i).collides(particles.get(j))) {
@@ -141,7 +141,7 @@ class Day20 {
 		String[] inputs = getInput().split("\\n");
 		List<Particle> particles = new ArrayList<>();
 
-		for (int i = 0; i < inputs.length; i++) {
+		for (int i = 0; i < inputs.length; ++i) {
 			particles.add(new Particle(i, inputs[i]));
 		}
 

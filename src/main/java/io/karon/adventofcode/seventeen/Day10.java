@@ -21,7 +21,7 @@ class Day10 {
 		private static int[] getFormattedInput() {
 			String[] input = getInput().split(",");
 			int[] array = new int[input.length];
-			for (int i = 0; i < input.length; i++) {
+			for (int i = 0; i < input.length; ++i) {
 				array[i] = Integer.parseInt(input[i]);
 			}
 			return array;
@@ -49,7 +49,7 @@ class Day10 {
 			}
 
 			StringBuilder stringBuilder = new StringBuilder();
-			for (int i = 0; i < 16; i++) {
+			for (int i = 0; i < 16; ++i) {
 				String xoredValue = paddedXor(sparseHash, i * 16, 16);
 				stringBuilder.append(xoredValue);
 			}
@@ -73,7 +73,7 @@ class Day10 {
 
 		private static int xor(int[] array, int startingIndex, int length) {
 			int xor = 0;
-			for (int i = 0; i < length; i++) {
+			for (int i = 0; i < length; ++i) {
 				xor ^= array[startingIndex + i];
 			}
 			return xor;
@@ -88,7 +88,7 @@ class Day10 {
 			position2 -= sparseHash.length;
 		}
 
-		for (int i = 0; i < length / 2; i++) {
+		for (int i = 0; i < length / 2; ++i) {
 			swap(sparseHash, position1, position2);
 
 			position1 += 1;
@@ -115,7 +115,7 @@ class Day10 {
 	private static int[] getIntArray() {
 		int[] intArray = new int[256];
 
-		for (int i = 1; i < intArray.length; i++) {
+		for (int i = 1; i < intArray.length; ++i) {
 			intArray[i] = i;
 		}
 
@@ -124,7 +124,7 @@ class Day10 {
 
 	static int[] getFormattedInput(String input) {
 		int[] array = new int[input.length() + 5];
-		for (int i = 0; i < input.length(); i++) {
+		for (int i = 0; i < input.length(); ++i) {
 			array[i] = input.charAt(i);
 		}
 		array[input.length()] = 17;

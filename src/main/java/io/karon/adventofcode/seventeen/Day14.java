@@ -12,7 +12,7 @@ class Day14 {
 				grid[row] = Day10.Star2.getDenseHash(lengths);
 			}
 
-			for (int i = 0; i < grid.length; i++) {
+			for (int i = 0; i < grid.length; ++i) {
 				grid[i] = hexToBinary(grid[i]);
 			}
 
@@ -45,7 +45,7 @@ class Day14 {
 				grid[row] = Day10.Star2.getDenseHash(lengths);
 			}
 
-			for (int i = 0; i < grid.length; i++) {
+			for (int i = 0; i < grid.length; ++i) {
 				grid[i] = hexToBinary(grid[i]);
 			}
 
@@ -57,7 +57,7 @@ class Day14 {
 		private static Node[][] gridToBinaryGrid(String[] grid) {
 			Node[][] nodeGrid = new Node[128][128];
 
-			for (int i = 0; i < grid.length; i++) {
+			for (int i = 0; i < grid.length; ++i) {
 				String hex = grid[i];
 				for (int j = 0; j < hex.length(); j++) {
 					nodeGrid[i][j] = new Node(hex.charAt(j) == '1');
@@ -113,7 +113,7 @@ class Day14 {
 	private static String hexToBinary(String hex) {
 		StringBuilder stringBuilder = new StringBuilder();
 
-		for (int i = 0; i < hex.length(); i++) {
+		for (int i = 0; i < hex.length(); ++i) {
 			String hexAsString = String.valueOf(hex.charAt(i));
 			int hexAsInt = Integer.parseInt(hexAsString, 16);
 			String hexAsBinary = Integer.toBinaryString(hexAsInt);

@@ -18,7 +18,7 @@ class Day22 {
 			int y = inputs[0].length() / 2;
 
 			int newInfectedCount = 0;
-			for (int i = 0; i < NUMBER_OF_BURSTS; i++) {
+			for (int i = 0; i < NUMBER_OF_BURSTS; ++i) {
 				String coordinates = coordinatesToString(x, y);
 				NodeStatus nodeStatus = grid.getOrDefault(coordinates, NodeStatus.CLEAN);
 				if (nodeStatus == NodeStatus.INFECTED) {
@@ -58,7 +58,7 @@ class Day22 {
 			int y = inputs[0].length() / 2;
 
 			int newInfectedCount = 0;
-			for (int i = 0; i < NUMBER_OF_BURSTS; i++) {
+			for (int i = 0; i < NUMBER_OF_BURSTS; ++i) {
 				String coordinates = coordinatesToString(x, y);
 				NodeStatus nodeStatus = grid.getOrDefault(coordinates, NodeStatus.CLEAN);
 				if (nodeStatus == NodeStatus.CLEAN) {
@@ -164,7 +164,7 @@ class Day22 {
 	private static Map<String, NodeStatus> getFormattedInput(String[] inputs) {
 		Map<String, NodeStatus> grid = new HashMap<>();
 
-		for (int i = 0; i < inputs.length; i++) {
+		for (int i = 0; i < inputs.length; ++i) {
 			for (int j = 0; j < inputs[i].length(); j++) {
 				if (inputs[i].charAt(j) == '#') {
 					grid.put(coordinatesToString(i, j), NodeStatus.INFECTED);

@@ -50,7 +50,7 @@ class Day5 {
 		String[] input = getInput().split("\\n");
 		int[] formattedInput = new int[input.length];
 
-		for (int i = 0; i < input.length; i++) {
+		for (int i = 0; i < input.length; ++i) {
 			formattedInput[i] = Integer.parseInt(input[i]);
 		}
 

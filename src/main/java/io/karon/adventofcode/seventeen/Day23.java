@@ -19,27 +19,27 @@ class Day23 {
 					case SET: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case SUB: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) - operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case MUL: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) * operations[i].getValue(1, registers));
 						mulCount++;
-						i++;
+						++i;
 						break;
 					}
 					case JNZ: {
 						if (operations[i].getValue(0, registers) != 0) {
 							i += operations[i].getValue(1, registers);
 						} else {
-							i++;
+							++i;
 						}
 						break;
 					}
@@ -67,27 +67,27 @@ class Day23 {
 					case SET: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case SUB: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) - operations[i].getValue(1, registers));
-						i++;
+						++i;
 						break;
 					}
 					case MUL: {
 						String register = operations[i].getKey(0, registers);
 						registers.put(register, registers.get(register) * operations[i].getValue(1, registers));
 						mulCount++;
-						i++;
+						++i;
 						break;
 					}
 					case JNZ: {
 						if (operations[i].getValue(0, registers) != 0) {
 							i += operations[i].getValue(1, registers);
 						} else {
-							i++;
+							++i;
 						}
 						break;
 					}
@@ -151,7 +151,7 @@ class Day23 {
 		String[] inputs = getInput().split("\\n");
 		Operation[] operations = new Operation[inputs.length];
 
-		for (int i = 0; i < inputs.length; i++) {
+		for (int i = 0; i < inputs.length; ++i) {
 			String[] operationData = inputs[i].split(" ");
 			operations[i] = new Operation(operationData);
 		}

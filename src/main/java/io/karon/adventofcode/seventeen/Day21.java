@@ -31,7 +31,7 @@ class Day21 {
 				int smallerGridNumber = grid.length / 2;
 				char[][] newGrid = new char[smallerGridNumber * 3][smallerGridNumber * 3];
 
-				for (int i = 0; i < smallerGridNumber; i++) {
+				for (int i = 0; i < smallerGridNumber; ++i) {
 					for (int j = 0; j < smallerGridNumber; j++) {
 						int indexI = i * 2;
 						int indexJ = j * 2;
@@ -63,7 +63,7 @@ class Day21 {
 				int smallerGridNumber = grid.length / 3;
 				char[][] newGrid = new char[smallerGridNumber * 4][smallerGridNumber * 4];
 
-				for (int i = 0; i < smallerGridNumber; i++) {
+				for (int i = 0; i < smallerGridNumber; ++i) {
 					for (int j = 0; j < smallerGridNumber; j++) {
 						int indexI = i * 3;
 						int indexJ = j * 3;

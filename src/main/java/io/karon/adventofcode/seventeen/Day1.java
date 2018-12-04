@@ -26,7 +26,7 @@ class Day1 {
 
 		int result = 0;
 
-		for (int i = 0, addForNext = addForNextFunction.apply(captchaAsCharArray); i < captchaAsCharArray.length; i++) {
+		for (int i = 0, addForNext = addForNextFunction.apply(captchaAsCharArray); i < captchaAsCharArray.length; ++i) {
 			int next = (i + addForNext) % captchaAsCharArray.length;
 
 			if (captchaAsCharArray[i] == captchaAsCharArray[next]) {

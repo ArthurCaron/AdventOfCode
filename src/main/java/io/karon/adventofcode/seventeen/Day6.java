@@ -45,7 +45,7 @@ class Day6 {
 		int biggestBankIndex = 0;
 		int biggestBankValue = 0;
 
-		for (int i = 0; i < memoryBanks.length; i++) {
+		for (int i = 0; i < memoryBanks.length; ++i) {
 			if (memoryBanks[i] > biggestBankValue) {
 				biggestBankValue = memoryBanks[i];
 				biggestBankIndex = i;
@@ -110,7 +110,7 @@ class Day6 {
 		String[] input = getInput().split("[\\t\\n]");
 		int[] formattedInput = new int[input.length];
 
-		for (int i = 0; i < input.length; i++) {
+		for (int i = 0; i < input.length; ++i) {
 			formattedInput[i] = Integer.parseInt(input[i]);
 		}
 
