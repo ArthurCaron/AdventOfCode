@@ -7,7 +7,7 @@ import java.util.List;
 
 public class InputReaderHelper {
     public static List<String> getInputAllLines(final int day) throws IOException {
-        final String filePath = String.format("src/main/resources/twenty/Day%d.txt", day);
+        final String filePath = String.format("src/main/resources/year-2020/Day%d.txt", day);
         return Files.readAllLines(Paths.get(filePath));
     }
 
